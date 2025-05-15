@@ -11,37 +11,43 @@ const modules = [
         id: "1",
         title: "Introdução à Informática",
         description: "Conceitos básicos de hardware, software e sistemas operacionais para iniciantes na área de tecnologia.",
-        progress: 0
+        progress: 0,
+        difficulty: "Fácil",
     },
     {
         id: "2",
         title: "Internet e Redes",
         description: "Fundamentos de conexão à internet, protocolos TCP/IP e segurança básica na navegação online.",
-        progress: 60
+        progress: 60,
+        difficulty: "Média",
     },
     {
         id: "3",
         title: "Pacote Office",
         description: "Domine o uso essencial do Word, Excel e PowerPoint para produtividade no ambiente de trabalho.",
-        progress: 15
+        progress: 15,
+        difficulty: "Fácil",
     },
     {
         id: "4",
         title: "Algoritmos e Lógica",
         description: "Princípios fundamentais de programação e desenvolvimento de raciocínio lógico.",
-        progress: 0
+        progress: 0,
+        difficulty: "Difícil",
     },
     {
         id: "5",
         title: "Segurança Digital",
         description: "Noções básicas de proteção de dados e prevenção contra ameaças virtuais.",
-        progress: 45
+        progress: 45,
+        difficulty: "Média",
     },
     {
         id: "6",
         title: "Redes Sociais",
         description: "Uso profissional das principais plataformas de mídias sociais e marketing digital.",
-        progress: 80
+        progress: 80,
+        difficulty: "Fácil",
     }
 ];
 
@@ -72,7 +78,7 @@ export default function ModuleCard() {
                             title={module.title}
                             description={module.description}
                             progress={module.progress}
-                        />
+                            difficulty={module.difficulty} />
                     </Dialog>
                 </div>
             ))}
