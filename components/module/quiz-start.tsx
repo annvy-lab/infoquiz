@@ -3,11 +3,10 @@ import {
     DialogDescription,
     DialogHeader,
     DialogTitle,
-} from "@/components/ui/dialog"
-import { Progress } from "@/components/ui/progress"
-import { Gamepad2, Heart } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Separator } from "@/components/ui/separator"
+} from "@/components/ui/dialog";
+import { Progress } from "@/components/ui/progress";
+import { Gamepad2, Heart } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 
 interface QuizStartProps {
@@ -19,7 +18,7 @@ interface QuizStartProps {
 
 export default function QuizStart({ title, description, progress, difficulty }: QuizStartProps) {
     return (
-        <DialogContent className="flex flex-col items-start w-full gap-3">
+        <DialogContent className="flex flex-col items-start w-full gap-3 rounded-2xl md:max-w-110">
             <DialogHeader className="flex flex-col items-start w-full gap-1">
                 <div className="flex w-full gap-3 items-center">
                     <div>
@@ -47,11 +46,13 @@ export default function QuizStart({ title, description, progress, difficulty }: 
             <DialogDescription className="text-left w-full">
                     {description}
             </DialogDescription>
-            <div className="w-full flex items-center justify-center gap-2">
+            <div className="w-full flex items-center justify-center gap-2 md:mt-1">
                 <Button variant="secondary" className="rounded-xl"><Heart strokeWidth={3} /></Button>
-                <Button className="w-[90%] rounded-xl font-normal shadow-lg">
+                <a href="/module" className="w-[90%]">
+                    <Button className="w-full rounded-xl font-normal shadow-lg">
                     {progress === 0 ? 'Iniciar' : 'Continuar'}
                 </Button>
+                </a>
             </div>
         </DialogContent>
     );

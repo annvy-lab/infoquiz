@@ -1,10 +1,10 @@
-import { Progress } from "@/components/ui/progress"
-import { Button } from "@/components/ui/button"
+import { Progress } from "@/components/ui/progress";
+import { Button } from "@/components/ui/button";
 import {
     Dialog,
     DialogTrigger,
-} from "@/components/ui/dialog"
-import QuizStart from "@/components/module/quiz/quiz-start"
+} from "@/components/ui/dialog";
+import QuizStart from "@/components/module/quiz-start";
 
 const modules = [
     {
@@ -53,14 +53,15 @@ const modules = [
 
 export default function ModuleCard() {
     return (
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 md:grid md:grid-cols-2">
             {modules.map((module) => (
-                <div key={module.id} className="w-full flex flex-col p-5 bg-card rounded-3xl gap-3">
+                <div key={module.id} className="w-full flex flex-col justify-between p-5 bg-card rounded-3xl gap-3 md:max-w-95">
+                    <div className="w-full flex flex-col gap-3">
                     <div className="flex flex-col gap-1">
                         <h1 className="text-xl font-medium tracking-wider line-clamp-2 overflow-hidden text-ellipsis mb-1">
                             {module.title}
                         </h1>
-                        <div className="flex gap-3 items-center">
+                            <div className="flex gap-3 items-center md:max-w-100">
                             <Progress value={module.progress} className="[&>div]:bg-[var(--chart-2)]" />
                             <p className="text-sm w-9 text-start text-secondary-foreground/80">{module.progress}%</p>
                         </div>
@@ -68,9 +69,10 @@ export default function ModuleCard() {
                     <span className="w-full line-clamp-3 font-light">
                         {module.description}
                     </span>
+                    </div>
                     <Dialog>
                         <DialogTrigger asChild>
-                            <Button className="w-full rounded-xl font-normal shadow-lg">
+                            <Button className="w-full rounded-xl font-normal shadow-lg md:max-w-100 md:self-center">
                                 {module.progress === 0 ? 'Fazer Quiz' : 'Continuar Quiz'}
                             </Button>
                         </DialogTrigger>
